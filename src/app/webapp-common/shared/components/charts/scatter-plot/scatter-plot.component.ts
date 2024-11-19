@@ -8,13 +8,13 @@ import {
 } from '@angular/core';
 import {ScatterPlotSeries} from '@common/core/reducers/projects.reducer';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {Chart, ChartData, ChartOptions, ChartType, TooltipItem} from 'chart.js';
+import {Chart, ChartData, ChartOptions, ChartType, TooltipItem, LinearScale, TimeScale, } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import 'chartjs-adapter-date-fns';
 import {TinyColor} from '@ctrl/tinycolor';
 import {BaseChartDirective} from 'ng2-charts';
 
-Chart.register(zoomPlugin);
+Chart.register(TimeScale, LinearScale, zoomPlugin);
 
 
 @Component({
